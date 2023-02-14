@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = "";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -65,17 +65,17 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-//	{ run_command, " %4s ", "vactija current" },
-    { run_command,       "^c#af8c62^  %4s ",         "volume.sh" },
-	{ netspeed_rx,       " ^c#c6ad84^ %sB/s ",       "wlp3s0"},
-	{ netspeed_tx,       " ^c#c6ad84^ %sB/s ",       "wlp3s0"},
-	{ wifi_perc,         " ^c#b49368^  %s%% ",       "wlp3s0"},
+	{ run_command,       "^c#8ec07c^ %4s ",           "vactija current" },
+    { run_command,       "^c#458588^  %4s ",         "volume.sh" },
+	{ netspeed_rx,       " ^c#689d81^ %sB/s ",       "wlp3s0"},
+	{ netspeed_tx,       " ^c#83a598^ %sB/s ",       "wlp3s0"},
+	{ wifi_perc,         " ^c#8ec07c^  %s%% ",        "wlp3s0"},
 	{ wifi_essid,        "(%s) ",                     "wlp3s0"},
-	{ run_command,       "^c#af8c62^ %s  ",           "battery.sh"},
-	{ battery_perc,      "%s%% "   ,                  "BAT0"},
+	{ run_command,       "^c#ebdbb2^%s  ",            "battery.sh"},
+	{ battery_perc,      "%s%% ",                     "BAT0"},
 	{ battery_remaining, "(%s) ",                     "BAT0"},
-	{ cpu_perc,          "^c#c6ad84^ [CPU:    %s%%] ", NULL },
-	{ ram_perc,          "^c#b49368^ [RAM: %s%%] ",   NULL },
+	{ cpu_perc,          "^c#8ec07c^  %s%%", NULL },
+	{ ram_perc,          "^c#ebdbb2^ [RAM: %s%%] ",   NULL },
 //	{ ram_used,          " (%s)   ",                  NULL },
-	{ datetime,          "^c#ffffff^%s",              "%a %b %d %R "},
+	{ datetime,          "^c#83a598^%s",              "%a %b %d %R"},
 };
