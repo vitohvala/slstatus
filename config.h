@@ -65,17 +65,17 @@ static const char unknown_str[] = "";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ run_command,       "^c#8ec07c^ %4s ",           "vactija current" },
+//	{ run_command,       "^c#8ec07c^ %4s ",           "vactija current" },
     { run_command,       "^c#458588^  %4s ",         "volume.sh" },
-	{ netspeed_rx,       " ^c#689d81^ %sB/s ",       "wlp3s0"},
-	{ netspeed_tx,       " ^c#83a598^ %sB/s ",       "wlp3s0"},
-	{ wifi_perc,         " ^c#8ec07c^  %s%% ",        "wlp3s0"},
-	{ wifi_essid,        "(%s) ",                     "wlp3s0"},
-	{ run_command,       "^c#ebdbb2^%s  ",            "battery.sh"},
-	{ battery_perc,      "%s%% ",                     "BAT0"},
-	{ battery_remaining, "(%s) ",                     "BAT0"},
-	{ cpu_perc,          "^c#8ec07c^  %s%%", NULL },
-	{ ram_perc,          "^c#ebdbb2^ [RAM: %s%%] ",   NULL },
+	{ netspeed_rx,       " ^c#689d81^ %sB/s ",       "wlan0"},
+	{ netspeed_tx,       " ^c#83a598^ %sB/s ",       "wlan0"},
+	{ wifi_perc,         " ^c#8ec07c^  %s%%  ",        "wlan0"},
+//	{ wifi_essid,        "(%s) ",                     "wlan0"},
+	{ run_command,       "^c#ebdbb2^%s ",            "battery_icon"},
+	{ battery_perc,      "%s%%  ",                     "BAT0"},
+//	{ battery_remaining, "(%s) ",                     "BAT0"},
+	{ cpu_perc,          "^c#8ec07c^  %s%% ", NULL },
+	{ ram_perc,          "^c#ebdbb2^   %s%% ",   NULL },
 //	{ ram_used,          " (%s)   ",                  NULL },
-	{ datetime,          "^c#83a598^%s",              "%a %b %d %R"},
+	{ datetime,          "^c#83a598^ 󰸘 %s",              "%a %b %d %R"},
 };
