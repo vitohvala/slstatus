@@ -36,8 +36,8 @@ static const char unknown_str[] = "";
  * keymap              layout (variant) of current     NULL
  *                     keymap
  * load_avg            load average                    NULL
- * netspeed_rx         receive network speed           interface name (wlan0)
- * netspeed_tx         transfer network speed          interface name (wlan0)
+ * netspeed_rx         receive network speed           interface name (enp5s0)
+ * netspeed_tx         transfer network speed          interface name (enp5s0)
  * num_files           number of files in a directory  path
  *                                                     (/home/foo/Inbox/cur)
  * ram_free            free memory in GB               NULL
@@ -60,19 +60,19 @@ static const char unknown_str[] = "";
  * username            username of current user        NULL
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  *                                                     NULL on OpenBSD
- * wifi_perc           WiFi signal in percent          interface name (wlan0)
- * wifi_essid          WiFi ESSID                      interface name (wlan0)
+ * wifi_perc           WiFi signal in percent          interface name (enp5s0)
+ * wifi_essid          WiFi ESSID                      interface name (enp5s0)
  */
 static const struct arg args[] = {
 	/* function format          argument */
 //	{ run_command,       "^c#8ec07c^ %4s ",           "vactija current" },
-    { run_command,       "^c#458588^  %4s ",         "volume.sh" },
-	{ netspeed_rx,       " ^c#689d81^ %sB/s ",       "wlan0"},
-	{ netspeed_tx,       " ^c#83a598^ %sB/s ",       "wlan0"},
-	{ wifi_perc,         " ^c#8ec07c^  %s%%  ",        "wlan0"},
-//	{ wifi_essid,        "(%s) ",                     "wlan0"},
-	{ run_command,       "^c#ebdbb2^%s ",            "battery_icon"},
-	{ battery_perc,      "%s%%  ",                     "BAT0"},
+    { vol_perc,          "^c#458588^  %4s ",         "/dev/mixer" },
+	{ netspeed_rx,       " ^c#689d81^ %sB/s ",       "enp5s0"},
+	{ netspeed_tx,       " ^c#83a598^ %sB/s ",       "enp5s0"},
+//	{ wifi_perc,         " ^c#8ec07c^  %s%%  ",        "enp5s0"},
+//	{ wifi_essid,        "(%s) ",                     "enp5s0"},
+//	{ run_command,       "^c#ebdbb2^%s ",            "battery_icon"},
+//	{ battery_perc,      "%s%%  ",                     "BAT0"},
 //	{ battery_remaining, "(%s) ",                     "BAT0"},
 	{ cpu_perc,          "^c#8ec07c^  %s%% ", NULL },
 	{ ram_perc,          "^c#ebdbb2^   %s%% ",   NULL },

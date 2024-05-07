@@ -8,6 +8,7 @@
 	#include <limits.h>
 	#include <stdint.h>
 	#include <unistd.h>
+    #include <stdlib.h>
 
 	static const char *
 	pick(const char *bat, const char *f1, const char *f2, char *path,
@@ -50,9 +51,8 @@
 			char *state;
 			char *symbol;
 		} map[] = {
-			{ "Charging",    "" },
-			{ "Discharging", "" },
-			{ "Full",        "" },
+			{ "Charging",    "+" },
+			{ "Discharging", "-" },
 		};
 		size_t i;
 		char path[PATH_MAX], state[12];
@@ -70,8 +70,24 @@
 				break;
 			}
 		}
-		return (i == LEN(map)) ? "?" : map[i].symbol;
+		return (i == LEN(map)) ? "?" : map[i].state;
 	}
+
+    const char *
+    battery_icon(const char *bat){
+        const char *batterry_i[] = {"󱃍","󰁺", "󰁺", "󰁼", "󰁽","󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"};
+        const char *bolt = "󱐋";
+
+        const uint8_t perc = (uint8_t) strtol(battery_perc(bat), (char **)NULL, 10);
+        const char *state = battery_state(bat);
+        uint8_t ind = perc / 10;
+
+        if(perc > 100) {
+            ind = 10;
+        }
+
+        return (strcmp(state, "Charging")) ? bprintf("%s%s", batterry_i[ind], bolt) : batterry_i[ind];
+    }
 
 	const char *
 	battery_remaining(const char *bat)
