@@ -66,7 +66,7 @@ static const char unknown_str[] = "";
 static const struct arg args[] = {
 	/* function format          argument */
 //	{ run_command,       "^c#8ec07c^ %4s ",           "vactija current" },
-    { vol_perc,          "^c#458588^  %4s ",         "/dev/mixer" },
+    { vol_perc,          "^c#458588^  %s%% ",         "/dev/mixer1" },
 	{ netspeed_rx,       " ^c#689d81^ %sB/s ",       "enp5s0"},
 	{ netspeed_tx,       " ^c#83a598^ %sB/s ",       "enp5s0"},
 //	{ wifi_perc,         " ^c#8ec07c^  %s%%  ",        "enp5s0"},
