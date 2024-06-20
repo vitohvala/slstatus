@@ -78,7 +78,7 @@
         const char *batterry_i[] = {"󱃍","󰁺", "󰁺", "󰁼", "󰁽","󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"};
         const char *bolt = "󱐋";
 
-        const uint8_t perc = (uint8_t) strtol(battery_perc(bat), (char **)NULL, 10);
+        uint8_t perc = (uint8_t) strtol(battery_perc(bat), (char **)NULL, 10);
         const char *state = battery_state(bat);
         uint8_t ind = perc / 10;
 
@@ -86,7 +86,7 @@
             ind = 10;
         }
 
-        return (strcmp(state, "Charging")) ? bprintf("%s%s", batterry_i[ind], bolt) : batterry_i[ind];
+        return (!(strcmp(state, "Charging"))) ? bprintf("%s%s", batterry_i[ind], bolt) : batterry_i[ind];
     }
 
 	const char *

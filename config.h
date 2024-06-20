@@ -66,13 +66,14 @@ static const char unknown_str[] = "";
 static const struct arg args[] = {
 	/* function format          argument */
 //	{ run_command,       "^c#8ec07c^ %4s ",           "vactija current" },
-    { vol_perc,          "^c#458588^  %s%% ",         "/dev/mixer1" },
-	{ netspeed_rx,       " ^c#689d81^ %sB/s ",       "enp5s0"},
-	{ netspeed_tx,       " ^c#83a598^ %sB/s ",       "enp5s0"},
+    { run_command,       "^c#458588^  %4s ",         "volume.sh" },
+	{ netspeed_rx,       " ^c#689d81^ %sB/s ",       "wlp3s0"},
+	{ netspeed_tx,       " ^c#83a598^ %sB/s ",       "wlp3s0"},
 //	{ wifi_perc,         " ^c#8ec07c^  %s%%  ",        "enp5s0"},
 //	{ wifi_essid,        "(%s) ",                     "enp5s0"},
 //	{ run_command,       "^c#ebdbb2^%s ",            "battery_icon"},
-//	{ battery_perc,      "%s%%  ",                     "BAT0"},
+	{ battery_icon,      "^c#ebdbb2^%s ",                     "BAT0"},
+	{ battery_perc,      "%s%% ",                     "BAT0"},
 //	{ battery_remaining, "(%s) ",                     "BAT0"},
 	{ cpu_perc,          "^c#8ec07c^  %s%% ", NULL },
 	{ ram_perc,          "^c#ebdbb2^   %s%% ",   NULL },
